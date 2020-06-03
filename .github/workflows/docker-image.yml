@@ -23,7 +23,7 @@ jobs:
         # The login password for the registry
         password: eca3eaf1-8e35-42cf-a2a5-58bbe592830e
         # Use registry for pushing to a custom registry
-        # registry: # optional
+        registry: https://hub.docker.com/repository/docker/avik735/gitlab_release
         # Use snapshot to push an additional image
         # snapshot: # optional
         # Use dockerfile when you would like to explicitly build a Dockerfile
