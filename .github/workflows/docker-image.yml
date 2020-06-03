@@ -1,0 +1,42 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Publish Docker
+      uses: elgohr/Publish-Docker-Github-Action@2.16
+      with:
+        # The name of the image you would like to push
+        name: gitlab_release
+        # The login username for the registry
+        username: avik735
+        # The login password for the registry
+        password: eca3eaf1-8e35-42cf-a2a5-58bbe592830e
+        # Use registry for pushing to a custom registry
+        # registry: # optional
+        # Use snapshot to push an additional image
+        # snapshot: # optional
+        # Use dockerfile when you would like to explicitly build a Dockerfile
+        dockerfile: Dockerfile
+        # Use workdir when you would like to change the directory for building
+        # workdir: # optional
+        # Use buildargs when you want to pass a list of environment variables as build-args
+        # buildargs: # optional
+        # Use cache when you have big images, that you would only like to build partially
+        # cache: # optional
+        # Use tags when you want to bring your own tags (separated by comma)
+        tags: 4.0
+        # Use tag_names when you want to push tags/release by their git name
+        # tag_names: # optional
+        # Push semver docker tags. e.g. image:1.2.3, image:1.2, image:1
+        # tag_semver: # optional
